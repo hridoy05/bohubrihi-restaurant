@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import {
-  Collapse,
-  Nav,
   Navbar,
   NavbarBrand,
-  NavbarToggler,
+  Nav,
   NavItem,
+  NavbarToggler,
+  Collapse,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 class Navigation extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class Navigation extends Component {
       isNavOpen: false,
     };
   }
+
   navToggle = () => {
     this.setState({
       isNavOpen: !this.state.isNavOpen,
@@ -29,14 +30,14 @@ class Navigation extends Component {
             <NavbarToggler onClick={this.navToggle} />
             <NavbarBrand href="/">Bohubrihi Restaurant</NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
-              <Nav className="mr-auto">
+              <Nav className="mr-auto" navbar>
                 <NavItem>
                   <Link to="/" className="nav-link active">
                     Home
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/menu" className="nav-link ">
+                  <Link to="/menu" className="nav-link">
                     Menu
                   </Link>
                 </NavItem>
@@ -46,7 +47,7 @@ class Navigation extends Component {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/contact" className="nav-link ">
+                  <Link to="/contact" className="nav-link">
                     Contact
                   </Link>
                 </NavItem>
